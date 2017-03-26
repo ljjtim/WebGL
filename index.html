@@ -1,29 +1,229 @@
-<!doctype html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>babababababa</title>
-    <link rel="stylesheet" href="TemplateData/style.css">
-    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
-    <script src="TemplateData/UnityProgress.js"></script>
-  </head>
-  <body class="template">
-    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="720px" width="1280px"></canvas>
-    <script type='text/javascript'>
-  var Module = {
-    TOTAL_MEMORY: 268435456,
-    errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
-    compatibilitycheck: null,
-    backgroundColor: "#222C36",
-    splashStyle: "Light",
-    dataUrl: "Release/test.data",
-    codeUrl: "Release/test.js",
-    asmUrl: "Release/test.asm.js",
-    memUrl: "Release/test.mem",
-  };
-</script>
-<script src="Release/UnityLoader.js"></script>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-  </body>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Author" contect="tim">
+	<title>个人作品展示</title>
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<base target='_blank'>
+	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+	<!-- WebGL -->
+	<link rel="stylesheet" href="WebGL/TemplateData/style.css">
+    <script src="WebGL/TemplateData/UnityProgress.js"></script>
+	<style>
+	
+	a {text-decoration:none}
+	a:link {color:#FFFFFF;}
+	a:visited {color:#FFFFFF;}
+	a:hover {color:#FFFFFF;}
+	a:active {color:#FFFFFF;}
+
+	body{
+		font-family: "Arial","Microsoft YaHei",sans-serif;
+	}
+
+	/* Style for our header texts
+	* --------------------------------------- */
+	h1{
+		font-size: 50px;
+		text-align: right;
+		margin:0px 20px 0px 0px;
+	}
+	.intro{
+		align: left;
+		position: absolute;
+    	width: 1000px;
+    	bottom: 15%;
+		background-color: rgba(0, 0, 0, 0.61);
+		color: #fff;
+	}
+	.slide{
+
+		color: #fff;
+	}
+
+	/* Centered texts in each section
+	* --------------------------------------- */
+	.section{
+		text-align:center;
+	}
+
+	/* Backgrounds will cover all the section--------------------------------------- */
+	#section0,
+	#section1,
+	#section2,
+	#section3,
+	#slide1,
+	#slide2,
+	#slide3{
+		background-size: cover;
+		background-attachment: fixed;
+	}
+
+	/* Defining each sectino background and styles
+	* --------------------------------------- */
+	#section0{
+		background-image: url(images/bg1.jpg);
+	}
+	#section1{
+		background-image: url(images/bg2.jpg);
+	}
+	#section2{
+		background-image: url(images/bg3.jpg);
+	}
+	#section3{
+		background-image: url(images/bg4.jpg);
+	}
+	
+	/*footer*/
+	#footer{
+    	position:fixed;
+    	height: 20px;
+    	display:block;
+    	width: 100%;
+    	background: #333;
+    	z-index:999;
+    	text-align:center;
+    	color: #f2f2f2;
+    	bottom: 0;
+	}
+	#footer_text{
+		font-size: 8px;
+		display: inline-block; 
+		vertical-align: middle;
+	}
+
+	/*loading*/
+	#loading{
+	background-color: #404d5b;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	margin-top: 0px;
+	top: 0px;
+	}
+	#loading-center{
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
+	#loading-center-absolute {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		height: 200px;
+		width: 200px;
+		margin-top: -100px;
+		margin-left: -100px;
+	}
+	#object{
+		width: 80px;
+		height: 80px;
+		background-color: #FFF;
+		-webkit-animation: animate 1s infinite ease-in-out;
+		animation: animate 1s infinite ease-in-out;
+		margin-right: auto;
+		margin-left: auto;
+		margin-top: 60px;
+	}
+	@-webkit-keyframes animate {
+	  0% { -webkit-transform: perspective(160px); }
+	  50% { -webkit-transform: perspective(160px) rotateY(-180deg); }
+	  100% { -webkit-transform: perspective(160px) rotateY(-180deg) rotateX(-180deg); }
+	}
+
+	@keyframes animate {
+	  0% { 
+	    transform: perspective(160px) rotateX(0deg) rotateY(0deg);
+	    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(0deg); 
+	  } 50% { 
+	    transform: perspective(160px) rotateX(-180deg) rotateY(0deg);
+	    -webkit-transform: perspective(160px) rotateX(-180deg) rotateY(0deg) ;
+	  } 100% { 
+	    transform: perspective(160px) rotateX(-180deg) rotateY(-180deg);
+	    -webkit-transform: perspective(160px) rotateX(-180deg) rotateY(-180deg);
+	  }
+	}
+	</style>
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
+	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="js/loading.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				sectionsColor: ['#66CCFF', '#1BBC9B', '#7E8F7C', '#C63D0F'],
+				css3: false,
+				navigation: true,
+				keyboardScrolling: false,
+			});
+			setInterval(function(){
+        		$.fn.fullpage.moveSlideRight();
+    		}, 4000);
+		});
+	</script>
+</head>
+<body>
+
+<div id="loading">
+	<div id="loading-center">
+		<div id="loading-center-absolute">
+			<div id="object"></div>
+		</div>
+	</div>
+</div>
+
+<div id="fullpage">
+
+	<div class="section" id="section0">
+		<div class="intro">
+			<h1>Quixel SUITE 2.0贴图插件发布</h1>
+		</div>
+	</div>
+
+	<div class="section" id="section1">
+		<div class="intro">
+			<h1>jQuery API 中文文档</h1>
+		</div>
+	</div>
+
+	<div class="section" id="section2">
+		<!-- WebGL -->
+		<canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" style="position: absolute; left: 0px; top: 0px; min-width: 100%; min-height: 100%; max-width: 100%; max-height: 100%;"></canvas>
+	    <script type='text/javascript'>
+	    var Module = {
+	    TOTAL_MEMORY: 268435456,
+	    errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+	    compatibilitycheck: null,
+	    backgroundColor: "#222C36",
+	    splashStyle: "Light",
+	    dataUrl: "WebGL/Release/test.data",
+	    codeUrl: "WebGL/Release/test.js",
+	    asmUrl: "WebGL/Release/test.asm.js",
+	    memUrl: "WebGL/Release/test.mem",
+	    };
+		</script>
+		<script src="WebGL/Release/UnityLoader.js"></script>
+	</div>
+
+	<div class="section" id="section3">
+		<div class="intro">
+			<h1>NUKE高级跟踪与合成技术速成指南 | tim</h1>
+		</div>
+	</div>
+
+<div id="footer">
+	<div id="footer_text">
+		© 2015-2017 tim. All rights reserved
+	</div>
+</div>
+
+</div>
+</body>
 </html>
