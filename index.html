@@ -15,10 +15,10 @@
 	<style>
 	
 	a {text-decoration:none}
-	a:link {color:#FFFFFF;}
-	a:visited {color:#FFFFFF;}
-	a:hover {color:#FFFFFF;}
-	a:active {color:#FFFFFF;}
+	a:link {color:#FFF;}
+	a:visited {color:#FFF;}
+	a:hover {color:#FFF;}
+	a:active {color:#FFF;}
 
 	body{
 		font-family: "Arial","Microsoft YaHei",sans-serif;
@@ -27,21 +27,64 @@
 	/* Style for our header texts
 	* --------------------------------------- */
 	h1{
-		font-size: 50px;
-		text-align: right;
-		margin:0px 20px 0px 0px;
+		font-size: 30px;
+		font-weight: 400;
+		text-align: center;
+		margin: 25px;
 	}
-	.intro{
-		align: left;
+	h2{
+		font-size: 20px;
+		font-weight: 100;
+		text-align: center;
+		margin: 30px;
+	}
+	h3{
+		font-size: 20px;
+		font-weight: 100;
+		text-align: left;
+	}
+	.software{
 		position: absolute;
-    	width: 1000px;
-    	bottom: 15%;
-		background-color: rgba(0, 0, 0, 0.61);
+		font-size: 35px;
+		top: 46px;
+		width: 100%;
+	}
+	.first_page{
+		align: center;
+		position: absolute;
+		left: 30%;
+		right: 30%;
+		top: 20%;
+		bottom: 20%;
+		background-color: rgba(0, 0, 0, 0);
 		color: #fff;
 	}
-	.slide{
-
+	.second_page{
+		align: center;
+		position: absolute;
+		left: 20%;
+		right: 20%;
+		top: 20%;
+		bottom: 20%;
+		background-color: rgba(0, 0, 0, 0);
 		color: #fff;
+	}
+	.second_left{
+		float: left;
+		width: 50%;
+	}
+	.second_right{
+		border-left: 1px;
+		float: right;
+		width: 40%;
+		margin: 0px 20px 0px 0px;
+	}
+	.circle{
+		width: 130px;
+		height: 130px;
+		float: left;
+		position: relative;
+		margin: 15px;
 	}
 
 	/* Centered texts in each section
@@ -54,10 +97,8 @@
 	#section0,
 	#section1,
 	#section2,
-	#section3,
-	#slide1,
-	#slide2,
-	#slide3{
+	#section3
+	{
 		background-size: cover;
 		background-attachment: fixed;
 	}
@@ -154,6 +195,7 @@
 	<script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
 	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
 	<script type="text/javascript" src="js/loading.js"></script>
+	<script type="text/javascript" src="js/circle-progress.js"></script>
 
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -171,25 +213,117 @@
 </head>
 <body>
 
-<div id="loading">
+<!-- <div id="loading">
 	<div id="loading-center">
 		<div id="loading-center-absolute">
 			<div id="object"></div>
 		</div>
 	</div>
-</div>
+</div> -->
 
 <div id="fullpage">
 
 	<div class="section" id="section0">
-		<div class="intro">
-			<h1>Quixel SUITE 2.0贴图插件发布</h1>
+		<div class="first_page">
+			<div style="border-radius: 50%; overflow: hidden; width: 120px; height: 120px; margin: 40px auto 40px auto;">
+				<img src="images/user.jpg" alt="Hi!" width="120px" height="120px">
+			</div>
+			<h1>世界上没有走不通的路</h1>
+			<hr style="color: #FFF; opacity: .5;" />
+			<h2>连嘉俊</h2>
+			<h2>应届毕业生</h2>
+			<h2>广州</h2>
+			<h2>139********</h2>
 		</div>
 	</div>
 
 	<div class="section" id="section1">
-		<div class="intro">
-			<h1>jQuery API 中文文档</h1>
+		<div class="second_page">
+			<h1>关于我</h1>
+			<div class="second_left">
+				<div id="Max" class="circle">
+					<div class="software">Max</div>
+				</div>
+				<div id="Ae" class="circle">
+					<div class="software">Ae</div>
+				</div>
+				<div id="Ps" class="circle">
+					<div class="software">Ps</div>
+				</div>
+				<div id="Maya" class="circle">
+					<div class="software">Maya</div>
+				</div>
+				<div id="U3D" class="circle">
+					<div class="software">U3D</div>
+				</div>
+				<div id="Pr" class="circle">
+					<div class="software">Pr</div>
+				</div>
+			</div>
+			<script>
+			    $('#Max').circleProgress({
+			    	startAngle: -Math.PI * 0.5,
+			        value: 0.75,
+			        size: 130,
+			        fill: {
+			            gradient: ["#00aaaa", "#42bab9"]
+			        },
+			        lineCap: "round"
+			    });
+			    $('#Ae').circleProgress({
+			    	startAngle: -Math.PI * 0.5,
+			        value: 0.7,
+			        size: 130,
+			        fill: {
+			            gradient: ["#1f0040", "#a46ccf"]
+			        },
+			        lineCap: "round"
+			    });
+			    $('#Ps').circleProgress({
+			    	startAngle: -Math.PI * 0.5,
+			        value: 0.7,
+			        size: 130,
+			        fill: {
+			            gradient: ["#001d26", "#00bef3"]
+			        },
+			        lineCap: "round"
+			    });
+			    $('#Maya').circleProgress({
+			    	startAngle: -Math.PI * 0.5,
+			        value: 0.65,
+			        size: 130,
+			        fill: {
+			            gradient: ["#006a6a", "#42bab9"]
+			        },
+			        lineCap: "round"
+			    });
+			    $('#U3D').circleProgress({
+			    	startAngle: -Math.PI * 0.5,
+			        value: 0.65,
+			        size: 130,
+			        fill: {
+			            gradient: ["#022a36", "#2e4f59"]
+			        },
+			        lineCap: "round"
+			    });
+			    $('#Pr').circleProgress({
+			    	startAngle: -Math.PI * 0.5,
+			        value: 0.6,
+			        size: 130,
+			        fill: {
+			            gradient: ["#261300", "#dd77ff"]
+			        },
+			        lineCap: "round"
+			    });
+			</script>
+			<div class="second_right">
+				<h3>1.了解设计软件 After Effects，Premiere，Photoshop，Nuke</h3>
+				<h3>2.了解三维软件 3Ds max，Maya，Unity3D，Houdini</h3>
+				<h3>3.了解计算机语言 Html，Css，Python</h3>
+				<h3>4.掌握 MS OFFICE：Word，PPT，Excel</h3>
+				<h3>5.省职院校技能大赛 虚拟现实（VR）设计与制作三等奖</h3>
+				<h3>6.广外艺电视台“优秀干事”</h3>
+			</div>
 		</div>
 	</div>
 
@@ -203,10 +337,10 @@
 	    compatibilitycheck: null,
 	    backgroundColor: "#222C36",
 	    splashStyle: "Light",
-	    dataUrl: "WebGL/Release/test.data",
-	    codeUrl: "WebGL/Release/test.js",
-	    asmUrl: "WebGL/Release/test.asm.js",
-	    memUrl: "WebGL/Release/test.mem",
+	    dataUrl: "WebGL/Release/webgl_build.data",
+	    codeUrl: "WebGL/Release/webgl_build.js",
+	    asmUrl: "WebGL/Release/webgl_build.asm.js",
+	    memUrl: "WebGL/Release/webgl_build.mem",
 	    };
 		</script>
 		<script src="WebGL/Release/UnityLoader.js"></script>
