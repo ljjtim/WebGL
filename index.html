@@ -20,6 +20,10 @@
 	a:hover {color:#FFF;}
 	a:active {color:#FFF;}
 
+	*{
+		margin: 0;
+	}
+
 	body{
 		font-family: "Arial","Microsoft YaHei",sans-serif;
 	}
@@ -27,10 +31,10 @@
 	/* Style for our header texts
 	* --------------------------------------- */
 	h1{
-		font-size: 30px;
+		font-size: 35px;
 		font-weight: 400;
 		text-align: center;
-		margin: 25px;
+		margin: 55px;
 	}
 	h2{
 		font-size: 20px;
@@ -42,6 +46,7 @@
 		font-size: 20px;
 		font-weight: 100;
 		text-align: left;
+		line-height: 30px;
 	}
 	.software{
 		position: absolute;
@@ -50,7 +55,6 @@
 		width: 100%;
 	}
 	.first_page{
-		align: center;
 		position: absolute;
 		left: 30%;
 		right: 30%;
@@ -60,7 +64,6 @@
 		color: #fff;
 	}
 	.second_page{
-		align: center;
 		position: absolute;
 		left: 20%;
 		right: 20%;
@@ -74,10 +77,9 @@
 		width: 50%;
 	}
 	.second_right{
-		border-left: 1px;
 		float: right;
 		width: 40%;
-		margin: 0px 20px 0px 0px;
+		margin: 0px 15px 0px 0px;
 	}
 	.circle{
 		width: 130px;
@@ -85,6 +87,73 @@
 		float: left;
 		position: relative;
 		margin: 15px;
+	}
+	.third_page{
+		position: absolute;
+		left: 25%;
+		right: 25%;
+		top: 5%;
+		bottom: 15%;
+		background-color: rgba(0, 0, 0, 0);
+		color: #fff;
+	}
+	ul{
+		-webkit-padding-start: 0px;
+        padding-left: 0px;
+	}
+	#lianxi li{
+		float: left;
+		list-style: none;
+		display: block;
+		width: 33.33%;
+	}
+	#lianxi li img{
+		width: 100px;
+		height: 100px;
+		margin: 0 auto 0 auto;
+	}
+	.third_center{
+		width: 100%;
+	}
+	.third_center form{
+		width: 100%;
+		overflow: hidden;
+	}
+	.third_center form label{
+		height: 70px;
+	}
+	.third_center form label:nth-child(4){
+		width: 100%;
+		height: 215px;
+	}
+	.third_center form input[type="text"]{
+		width: 100%;
+	    background: #ffffff;
+	    color: #333333;		    
+	}
+	
+	.third_center form textarea {
+	    width: 100%;
+	    height: 180px;
+	    background: #ffffff;
+	    resize:none;
+	    color: #333333;	
+	}
+	.third_center form button{
+	    color: #ffffff;
+	    padding: 0.6em 1.4em;
+	    font-size: 1.2rem;
+	    border-radius: 4px;
+	    cursor: pointer;
+	    border: 1px solid #0981cd;
+	    background: #0981cd;
+	}
+	input,textarea,button{
+	outline: none;
+	padding: 12px;
+	font-size: 1.2rem;
+	border: 1px solid #a2a2a2;
+	background: none;
 	}
 
 	/* Centered texts in each section
@@ -347,8 +416,30 @@
 	</div>
 
 	<div class="section" id="section3">
-		<div class="intro">
-			<h1>NUKE高级跟踪与合成技术速成指南 | tim</h1>
+		<div class="third_page">
+			<h1>联系我</h1>
+			<ul id="lianxi">
+				<li><img src="images/1.png"><h2>广东省广州市</h2></li>
+				<li><img src="images/2.png"><h2>ljjtim@qq.com</h2></li>
+				<li><img src="images/3.png"><h2>139********</h2></li>
+			</ul>
+			<div class="third_center">
+				<form>
+					<label>
+						<input type="text" id="username" placeholder="你的名字" required="">
+					</label>
+					<label>
+						<input type="text" id="usermail" placeholder="你的邮箱" required="">
+					</label>	
+					<label>
+						<input type="text" id="usertheme" placeholder="主题" required="">
+					</label>	
+					<label>
+						<textarea id="usercon" placeholder="内容" required=""></textarea>
+					</label>					
+						<button>发送</button>
+				</form>
+			</div>
 		</div>
 	</div>
 
